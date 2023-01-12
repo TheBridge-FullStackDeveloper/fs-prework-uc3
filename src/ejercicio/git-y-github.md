@@ -39,6 +39,7 @@ Con GitHub podemos acceder de manera remota a nuestros repositorios, clonarlos, 
 <br>
 <br>
 
+
 # Primeros pasos
 
 <br>
@@ -62,11 +63,165 @@ Con GitHub podemos acceder de manera remota a nuestros repositorios, clonarlos, 
 <br>
 <br>
 
----
----
+# Git environments: local vs remote
+![img](../assets/git/git_environments.png)
+
+# Git branches - Workflow para trabajar con ramas
+![img](../assets/git/workflow_git.png)
+![img](../assets/git/branches.png)
+![img](../assets/git/branches.webp)
+![img](../assets/git/branches_commands.png)
+
+
+**GIT Working flow (local) - Ramas (Branches)**
+
+Ramas (Universos Paralelos)
+*Línea master -> linea estable o principal.*
+*Lineas secundarias -> lineas de desarrollo, bugs, experimentos, etc...*
+
+- branch
+
+    - Crear una rama
+    ```
+    git branch NOMBRERAMA
+    ```
+
+    - Ver ramas
+    ```
+    git branch
+    ```    
+
+    - Cambiar de rama
+    ```
+    git checkout NOMBRERAMA
+    ```  
+
+    - Ver cambios en formato ramas
+    ```
+    git log --oneline --graph --all
+    ```  
+
+    - Borrar una rama
+    ```
+    git branch -d NOMBRERAMA
+    ```
+
+
+**GIT Working flow (local) - Fusiones (básico)**
+
+- Nos situamos en la rama que absorberá (principal)
+    ```
+    git checkout RAMAPRINCIAL
+    ```
+
+- Hacemos el *merge*
+    ```
+    git merge RAMASECUNDARIA
+    ```
+
+- Añadir comentario (o)
+
+- Guardar y salir (:x)
+
+- Ramas fusionadas
+    ```
+    git branch
+    ```
+
+- Borramos rama
+    ```
+    git branch -d NOMBRERAMA
+    ```
+
+
+**GIT Working flow (local) - Fusiones (gestión conflictos)**
+
+  - Fast-forward (automatizado). No hay conflicto alguno.
+
+    - Nos situamos en la rama que absorberá (principal)
+    ```
+    git checkout RAMAPRINCIAL
+    ```
+
+    - Hacemos el MERGE
+    ```
+    git merge RAMASECUNDARIA
+    ```
+
+    - Añadir comentario (o)
+
+    - Guardar y salir (:x)
+
+
+  - Manual Merge (Conflicto, dos personas tocaron los mismos archivos)
+
+    - Nos situamos en la rama que absorberá (principal)
+    ```
+    git checkout RAMAPRINCIAL
+    ```
+
+    - Hacemos el MERGE
+    ```
+    git merge RAMASECUNDARIA
+    ```
+
+    - En consola
+    ```
+    Auto-merging CARPETA/ARCHIVO
+    CONFLICT (content): Merge conflict in CARPETA/ARCHIVO
+    Automatic merge failed; fix conflicts and then commit the result.
+    ```
+
+    - En el editor
+    ```
+    <<<<<<< HEAD
+    hello world....!!!!!!!
+    =======
+    hello world 2 ..!!!
+    >>>>>>> conflictiva
+    ```
+
+    - Resuelver y guardar
+    ```
+    hello world 2 ..!!!
+    ```
+
+    - Comprobamos el estado
+    ```
+    git status
+    ```
+
+    - commit para la resolución conflicto
+    ```
+    git commit -am "con este commit se arregla el conflicto"
+    ```
+
+    - Resultado
+    ```
+    *   81a6c1d con este commit se arregla el conflicto
+    |\  
+    | * 64b5518 que pasa
+    * | 29a6348 ahora conflcito..no
+    |/  
+    * afe16ae Todo arriba..
+    * 7c9cc50 Mi primer Commit
+    ```
+
+    - Borramos la rama (opcional)
+    ```
+    git branch -d NOMBRERAMA
+    ```
+
+
+Tutoriales de ayuda:
+- [a-successful-git-branching-model](https://nvie.com/posts/a-successful-git-branching-model/)
+- [Git-Branching-Basic-Branching-and-Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging)
+- [git-branch | javatpoint](https://www.javatpoint.com/git-branch)
+- [using-branches| Atlassian](https://www.atlassian.com/git/tutorials/using-branches)
 
 <br>
 <br>
+
 
 # 📌 Instalación
 
@@ -278,6 +433,7 @@ git log
 - 🎮 [Learn Git Branching Game](https://learngitbranching.js.org/)
 
 - 💻 [Sitio oficial de Git](https://git-scm.com/)
+- 💻 [Git/GitHub Cheatsheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
 <br>
 <br>
