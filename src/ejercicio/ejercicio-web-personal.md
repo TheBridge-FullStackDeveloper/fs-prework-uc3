@@ -106,7 +106,7 @@ El proyecto deberá tener _como mínimo_ las siguientes secciones:
 
 3. **Ejercicios JS**
 
-    - Validar por JS el formulario creado en `contacto.html`
+    - Validar por JS el formulario creado en `contacto.html`. Se deberán reflejar en el DOM utilizando JS y CSS si hay campos inválidos al enviar el formulario.
     - Dado el array de objetos portfolio, pintar en el DOM de `portfolio.html` tarjetas con detalles de cada trabajo del porfolio utilizando JS. 
     
     Ejemplo del array porfolio de Pablo Picasso:
